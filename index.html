@@ -8,37 +8,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0d0a14;
-      --surface: #13101c;
-      --card: #1a1626;
-      --border: #2a2040;
-      --text: #f0eaf8;
-      --text-secondary: #9580b8;
-      --muted: #4a3a6a;
-      --pink: #f472b6;
-      --purple: #a78bfa;
-      --rose: #fb7185;
-      --peach: #fb923c;
-      --mint: #34d399;
-      --blue: #60a5fa;
-      --yellow: #f59e0b;
+      --bg: #0d0a14; --surface: #13101c; --card: #1a1626; --border: #2a2040;
+      --text: #f0eaf8; --text-secondary: #9580b8; --muted: #4a3a6a;
+      --pink: #f472b6; --purple: #a78bfa; --rose: #fb7185; --peach: #fb923c;
+      --mint: #34d399; --blue: #60a5fa; --yellow: #f59e0b;
     }
-
     html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; line-height: 1.5; }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--surface); }
     ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
-
     .layout { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-
-    .hero {
-      background: linear-gradient(135deg, #1e1235 0%, #150e2a 40%, #0d0a14 100%);
-      border: 1px solid #3a2560; border-radius: 20px;
-      padding: 2.5rem 3rem; margin-bottom: 2.5rem;
-      position: relative; overflow: hidden;
-    }
+    .hero { background: linear-gradient(135deg, #1e1235 0%, #150e2a 40%, #0d0a14 100%); border: 1px solid #3a2560; border-radius: 20px; padding: 2.5rem 3rem; margin-bottom: 2.5rem; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(244,114,182,0.18) 0%, transparent 70%); pointer-events: none; }
     .hero::after { content: ''; position: absolute; bottom: -40px; left: 25%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(167,139,250,0.14) 0%, transparent 70%); pointer-events: none; }
     .hero-eyebrow { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.875rem; }
@@ -49,9 +30,7 @@
     .wave { display: inline-block; animation: wave 2s ease-in-out infinite; transform-origin: bottom right; }
     @keyframes wave { 0%,100%{transform:rotate(0deg)} 20%{transform:rotate(18deg)} 40%{transform:rotate(-8deg)} 60%{transform:rotate(14deg)} 80%{transform:rotate(-4deg)} }
     .hero p { color: #b09dc8; font-size: 0.9375rem; }
-
     .section-label { display: flex; align-items: center; gap: 0.5rem; font-size: 0.6875rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
-
     .announcements { margin-bottom: 2.5rem; }
     .announcement { display: flex; align-items: center; gap: 1rem; background: rgba(244,114,182,0.07); border: 1px solid rgba(244,114,182,0.22); border-radius: 12px; padding: 0.875rem 1.25rem; margin-bottom: 0.625rem; transition: border-color 0.2s; }
     .announcement:hover { border-color: rgba(244,114,182,0.45); }
@@ -59,7 +38,6 @@
     .announcement-date { font-size: 0.75rem; color: var(--muted); flex-shrink: 0; }
     .dismiss-btn { background: none; border: none; cursor: pointer; color: var(--muted); font-size: 1rem; padding: 2px 4px; border-radius: 4px; transition: color 0.15s; display: flex; align-items: center; }
     .dismiss-btn:hover { color: var(--text); }
-
     .tools { margin-bottom: 2.5rem; }
     .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 1rem; }
     .tool-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.375rem; cursor: pointer; text-decoration: none; color: inherit; display: block; transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s; }
@@ -72,13 +50,8 @@
     .tool-desc { font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.5; }
     .tool-link { display: flex; align-items: center; gap: 0.375rem; font-size: 0.8rem; font-weight: 600; margin-top: 1rem; transition: gap 0.15s; }
     .tool-card:hover .tool-link { gap: 0.625rem; }
-
     .gallery { margin-bottom: 2.5rem; }
-    .slideshow-wrap {
-      position: relative; border-radius: 20px; overflow: hidden;
-      background: #0a0710; border: 1px solid #3a2a5a;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
+    .slideshow-wrap { position: relative; border-radius: 20px; overflow: hidden; background: #0a0710; border: 1px solid #3a2a5a; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
     .slideshow { position: relative; width: 100%; height: 560px; }
     .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.9s ease; }
     .slide.active { opacity: 1; }
@@ -88,4 +61,220 @@
     .slide-btn:hover { background: rgba(244,114,182,0.3); transform: translateY(-50%) scale(1.1); }
     .slide-prev { left: 1rem; }
     .slide-next { right: 1rem; }
-    .slide-dots { position: absolute; bottom: 1.25rem; left: 50%; transform
+    .slide-dots { position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 6px; align-items: center; }
+    .dot-item { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .dot-item.active { background: var(--pink); transform: scale(1.4); }
+    .slide-counter { position: absolute; top: 1rem; right: 1rem; z-index: 10; font-size: 0.75rem; font-weight: 600; color: rgba(255,255,255,0.7); background: rgba(0,0,0,0.4); backdrop-filter: blur(6px); padding: 4px 10px; border-radius: 20px; }
+    .spotlight { margin-bottom: 2.5rem; }
+    .spotlight-card { background: linear-gradient(135deg, #1c1330 0%, #141228 60%, #0d0a14 100%); border: 1px solid #3a2a5a; border-radius: 16px; padding: 1.75rem 2rem; position: relative; overflow: hidden; }
+    .spotlight-card::before { content: ''; position: absolute; top: -30px; right: -30px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(167,139,250,0.22) 0%, transparent 70%); pointer-events: none; }
+    .spotlight-header { display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1.375rem; flex-wrap: wrap; }
+    .spotlight-icon { width: 40px; height: 40px; border-radius: 11px; background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .spotlight-title { font-weight: 700; font-size: 1.0625rem; color: #fff; }
+    .spotlight-sub { font-size: 0.75rem; color: var(--text-secondary); margin-top: 1px; }
+    .priority-badge { margin-left: auto; font-size: 0.65rem; font-weight: 700; padding: 3px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(167,139,250,0.18); color: var(--purple); border: 1px solid rgba(167,139,250,0.35); }
+    .doc-links { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .doc-link { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9px; font-size: 0.8125rem; text-decoration: none; background: rgba(167,139,250,0.1); border: 1px solid rgba(167,139,250,0.28); color: #c4b5fd; transition: background 0.15s, border-color 0.15s; }
+    .doc-link:hover { background: rgba(167,139,250,0.2); border-color: rgba(167,139,250,0.5); }
+    .doc-placeholder { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9px; font-size: 0.8125rem; background: rgba(255,255,255,0.02); border: 1px dashed rgba(167,139,250,0.2); color: #5a4a7a; }
+    .spotlight-hint { font-size: 0.75rem; color: #4a3a6a; margin-top: 1.25rem; font-style: italic; }
+    @media (max-width: 600px) {
+      .hero { padding: 1.75rem 1.5rem; } .hero h1 { font-size: 1.6rem; }
+      .layout { padding: 1.5rem 1rem 3rem; } .slideshow { height: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+
+    <div class="hero">
+      <div class="hero-eyebrow"><div class="dot"></div><span>✦ Marketing Ops</span></div>
+      <h1>Good morning, team! <span class="wave">👋</span></h1>
+      <p>Your Marketing Ops command center — everything you need, in one place.</p>
+    </div>
+
+    <div class="announcements" id="announcements">
+      <div class="section-label">🔔 Announcements</div>
+      <div class="announcement" id="ann-1">
+        <span style="font-size:1rem;flex-shrink:0">📣</span>
+        <span class="announcement-text">Rebranding project is live — check the Spotlight section below for key documents.</span>
+        <span class="announcement-date">June 2025</span>
+        <button class="dismiss-btn" onclick="dismiss('ann-1')" title="Dismiss">✕</button>
+      </div>
+    </div>
+
+    <div class="tools">
+      <div class="section-label">🔗 Our Tools</div>
+      <div class="tools-grid">
+        <a class="tool-card" href="https://cmoclaw.clawz.org/etoro-dashboard/" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#f472b6'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(244,114,182,0.14);border:1px solid rgba(244,114,182,0.25)">🌐</div><div class="tool-tags"><span class="tag" style="background:rgba(244,114,182,0.13);color:#f472b6;border:1px solid rgba(244,114,182,0.25)">Compliance</span></div></div>
+          <div class="tool-name">Information Hub</div><div class="tool-desc">Cross-border rules, disclaimer matrix & all compliance info</div>
+          <div class="tool-link" style="color:#f472b6">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://etoro-localization-hub.vercel.app/banner-proofreading" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#a78bfa'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(167,139,250,0.14);border:1px solid rgba(167,139,250,0.25)">✏️</div><div class="tool-tags"><span class="tag" style="background:rgba(167,139,250,0.13);color:#a78bfa;border:1px solid rgba(167,139,250,0.25)">Proofreading</span></div></div>
+          <div class="tool-name">Localization Hub</div><div class="tool-desc">Banner & video proofreading across 21 languages</div>
+          <div class="tool-link" style="color:#a78bfa">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://regul8-ai-126ea985.base44.app/submitcontentpage" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#fb923c'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(251,146,60,0.14);border:1px solid rgba(251,146,60,0.25)">🛡️</div><div class="tool-tags"><span class="tag" style="background:rgba(251,146,60,0.13);color:#fb923c;border:1px solid rgba(251,146,60,0.25)">Compliance</span></div></div>
+          <div class="tool-name">Regul8</div><div class="tool-desc">AI-powered compliance content review tool</div>
+          <div class="tool-link" style="color:#fb923c">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://brandclaw.clawz.org/brief/#brief/d466dbf0-efd5-4b25-859d-27de18e8fc6b" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#34d399'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(52,211,153,0.14);border:1px solid rgba(52,211,153,0.25)">📋</div><div class="tool-tags"><span class="tag" style="background:rgba(251,146,60,0.12);color:#fb923c;border:1px solid rgba(251,146,60,0.25)">WIP</span><span class="tag" style="background:rgba(52,211,153,0.12);color:#34d399;border:1px solid rgba(52,211,153,0.25)">Briefs</span></div></div>
+          <div class="tool-name">Briefs Portal</div><div class="tool-desc">Create and manage campaign briefs</div>
+          <div class="tool-link" style="color:#34d399">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://etoro.zip.com/home" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#60a5fa'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(96,165,250,0.14);border:1px solid rgba(96,165,250,0.25)">🛒</div><div class="tool-tags"><span class="tag" style="background:rgba(96,165,250,0.13);color:#60a5fa;border:1px solid rgba(96,165,250,0.25)">Procurement</span></div></div>
+          <div class="tool-name">ZIP</div><div class="tool-desc">Purchase order management system</div>
+          <div class="tool-link" style="color:#60a5fa">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://globaltrad-my.sharepoint.com/:w:/g/personal/hilash_etoro_com/IQCQSAt2b-4nSqdXqlYq4py6AQQAyKgZG_H_eVLRUVcRblk?CID=46b2b727-ecc8-ccbd-d849-080f10606074&SI=SentItems" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#f9a8d4'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(249,168,212,0.14);border:1px solid rgba(249,168,212,0.25)">📄</div><div class="tool-tags"><span class="tag" style="background:rgba(249,168,212,0.13);color:#f9a8d4;border:1px solid rgba(249,168,212,0.25)">Template</span></div></div>
+          <div class="tool-name">Brief Template</div><div class="tool-desc">Standard campaign brief template (SharePoint)</div>
+          <div class="tool-link" style="color:#f9a8d4">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://etoro.monday.com/boards/18399632510" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#f59e0b'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(245,158,11,0.14);border:1px solid rgba(245,158,11,0.25)">🌍</div><div class="tool-tags"><span class="tag" style="background:rgba(245,158,11,0.13);color:#f59e0b;border:1px solid rgba(245,158,11,0.25)">Monday</span></div></div>
+          <div class="tool-name">Translations Board</div><div class="tool-desc">monday.com board for managing translation requests</div>
+          <div class="tool-link" style="color:#f59e0b">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://globaltrad-my.sharepoint.com/shared?id=%2Fpersonal%2Fnirsm%5Fetoro%5Fcom%2FDocuments%2Fvfe%2Eavitalso%40etoro%2Ecom%2FQuarterly%20Materials&listurl=%2Fpersonal%2Fnirsm%5Fetoro%5Fcom%2FDocuments" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#34d399'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(52,211,153,0.14);border:1px solid rgba(52,211,153,0.25)">📁</div><div class="tool-tags"><span class="tag" style="background:rgba(52,211,153,0.13);color:#34d399;border:1px solid rgba(52,211,153,0.25)">SharePoint</span></div></div>
+          <div class="tool-name">Quarterly Materials</div><div class="tool-desc">All ready-to-use quarterly assets and materials</div>
+          <div class="tool-link" style="color:#34d399">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://globaltrad-my.sharepoint.com/shared?id=%2Fpersonal%2Fnirsm%5Fetoro%5Fcom%2FDocuments%2Fvfe%2Eavitalso%40etoro%2Ecom%2Fhadasar%40etoro%2Ecom%2FHadas%27s%20Drive%2FAgreements%20and%20IO&listurl=%2Fpersonal%2Fnirsm%5Fetoro%5Fcom%2FDocuments" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#fb7185'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(251,113,133,0.14);border:1px solid rgba(251,113,133,0.25)">⚖️</div><div class="tool-tags"><span class="tag" style="background:rgba(251,113,133,0.13);color:#fb7185;border:1px solid rgba(251,113,133,0.25)">Legal</span></div></div>
+          <div class="tool-name">Legal Agreements</div><div class="tool-desc">All signed contracts & IOs — file every agreement here</div>
+          <div class="tool-link" style="color:#fb7185">Open ›</div>
+        </a>
+        <a class="tool-card" href="https://etoro.monday.com/boards/1002260215" target="_blank" rel="noopener" onmouseenter="this.style.borderColor='#c084fc'" onmouseleave="this.style.borderColor='var(--border)'">
+          <div class="tool-top"><div class="tool-icon" style="background:rgba(192,132,252,0.14);border:1px solid rgba(192,132,252,0.25)">🏛️</div><div class="tool-tags"><span class="tag" style="background:rgba(192,132,252,0.13);color:#c084fc;border:1px solid rgba(192,132,252,0.25)">Monday</span></div></div>
+          <div class="tool-name">Legal Board</div><div class="tool-desc">monday.com board for legal requests and tracking</div>
+          <div class="tool-link" style="color:#c084fc">Open ›</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <div class="section-label">💅 The Ops Squad</div>
+      <div class="slideshow-wrap">
+        <div class="slideshow" id="slideshow">
+          <div class="slide active"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.15%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.15%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.15%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.15%20(4).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.15%20(5).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.15.jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.16%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.16%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.16%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.16%20(4).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.16.jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.17%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.17%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.17%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.17.jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.18%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.18%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.18%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.18%20(4).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.18%20(5).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.18.jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.19%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.19%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.19%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.19%20(4).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.19%20(5).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.19.jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.20%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.20%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.20%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.20%20(4).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.20.jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.21%20(1).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.21%20(2).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.21%20(3).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.21%20(4).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.21%20(5).jpeg" alt="The Ops Squad" /></div>
+          <div class="slide"><img src="WhatsApp%20Image%202026-06-02%20at%2013.10.21.jpeg" alt="The Ops Squad" /></div>
+        </div>
+        <button class="slide-btn slide-prev" onclick="moveSlide(-1)">‹</button>
+        <button class="slide-btn slide-next" onclick="moveSlide(1)">›</button>
+        <div class="slide-dots" id="dots"></div>
+        <div class="slide-counter" id="counter">1 / 38</div>
+      </div>
+    </div>
+
+    <div class="spotlight">
+      <div class="section-label">⭐ Project in Spotlight</div>
+      <div class="spotlight-card">
+        <div class="spotlight-header">
+          <div class="spotlight-icon">✦</div>
+          <div><div class="spotlight-title">Rebranding</div><div class="spotlight-sub">Current priority project</div></div>
+          <span class="priority-badge">Priority</span>
+        </div>
+        <div class="doc-links">
+          <a class="doc-link" href="https://globaltrad-my.sharepoint.com/:x:/r/personal/hilash_etoro_com/_layouts/15/Doc.aspx?sourcedoc=%7BE986FBCC-B74B-4B62-BCFA-1ED570CCA4F5%7D&file=eToro%20New%20App%20Campaign.xlsx&action=default&mobileredirect=true" target="_blank" rel="noopener">📊 Campaign Tracker</a>
+          <span class="doc-placeholder">📅 Media Plan · add link</span>
+        </div>
+        <p class="spotlight-hint">Media Plan placeholder — update the link when ready.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const h = new Date().getHours();
+    const greet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+    document.querySelector('.hero h1').innerHTML = `${greet}, team! <span class="wave">👋</span>`;
+
+    function dismiss(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.opacity = '0'; el.style.transition = 'opacity 0.3s';
+      setTimeout(() => { el.remove(); const b = document.getElementById('announcements'); if (b && !b.querySelector('.announcement')) b.style.display='none'; }, 300);
+    }
+
+    const TOTAL = 38;
+    let current = 0, timer;
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    const counter = document.getElementById('counter');
+
+    slides.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'dot-item' + (i === 0 ? ' active' : '');
+      d.onclick = () => goTo(i);
+      dotsContainer.appendChild(d);
+    });
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
+      current = (n + TOTAL) % TOTAL;
+      slides[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
+      counter.textContent = (current + 1) + ' / ' + TOTAL;
+      resetTimer();
+    }
+
+    function moveSlide(dir) { goTo(current + dir); }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') moveSlide(1);
+      if (e.key === 'ArrowLeft') moveSlide(-1);
+    });
+
+    resetTimer();
+  </script>
+</body>
+</html>
